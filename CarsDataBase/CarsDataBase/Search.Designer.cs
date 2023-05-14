@@ -30,8 +30,9 @@
         {
             this.frmDataGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.frmFieldLabel = new System.Windows.Forms.Label();
             this.frmOperatorLabel = new System.Windows.Forms.Label();
+            this.frmFieldLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.frmDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -48,12 +49,22 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.frmOperatorLabel);
             this.panel1.Controls.Add(this.frmFieldLabel);
             this.panel1.Location = new System.Drawing.Point(24, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(595, 149);
             this.panel1.TabIndex = 1;
+            // 
+            // frmOperatorLabel
+            // 
+            this.frmOperatorLabel.AutoSize = true;
+            this.frmOperatorLabel.Location = new System.Drawing.Point(142, 34);
+            this.frmOperatorLabel.Name = "frmOperatorLabel";
+            this.frmOperatorLabel.Size = new System.Drawing.Size(72, 20);
+            this.frmOperatorLabel.TabIndex = 1;
+            this.frmOperatorLabel.Text = "Operator";
             // 
             // frmFieldLabel
             // 
@@ -64,14 +75,14 @@
             this.frmFieldLabel.TabIndex = 0;
             this.frmFieldLabel.Text = "Field";
             // 
-            // frmOperatorLabel
+            // label1
             // 
-            this.frmOperatorLabel.AutoSize = true;
-            this.frmOperatorLabel.Location = new System.Drawing.Point(142, 34);
-            this.frmOperatorLabel.Name = "frmOperatorLabel";
-            this.frmOperatorLabel.Size = new System.Drawing.Size(72, 20);
-            this.frmOperatorLabel.TabIndex = 1;
-            this.frmOperatorLabel.Text = "Operator";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(283, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "label1";
             // 
             // Search
             // 
@@ -95,5 +106,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label frmOperatorLabel;
         private System.Windows.Forms.Label frmFieldLabel;
+        private System.Windows.Forms.Label label1;
     }
 }
