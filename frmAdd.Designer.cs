@@ -55,6 +55,7 @@
             this.btnClear.TabIndex = 0;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_click);
             // 
             // btnAdd
             // 
@@ -65,6 +66,7 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_click);
             // 
             // btnClose
             // 
@@ -75,6 +77,7 @@
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_click);
             // 
             // frmVehicleRegLabel
             // 
@@ -136,6 +139,7 @@
             this.frmVehicleReg.Name = "frmVehicleReg";
             this.frmVehicleReg.Size = new System.Drawing.Size(130, 26);
             this.frmVehicleReg.TabIndex = 9;
+            this.frmVehicleReg.Click += new System.EventHandler(this.frmVehicleReg_TextChanged);
             // 
             // frmMake
             // 
@@ -143,6 +147,7 @@
             this.frmMake.Name = "frmMake";
             this.frmMake.Size = new System.Drawing.Size(249, 26);
             this.frmMake.TabIndex = 10;
+            this.frmMake.Click += new System.EventHandler(this.frmMake_TextChanged);
             // 
             // frmEngine
             // 
@@ -150,6 +155,7 @@
             this.frmEngine.Name = "frmEngine";
             this.frmEngine.Size = new System.Drawing.Size(130, 26);
             this.frmEngine.TabIndex = 11;
+            this.frmEngine.Click += new System.EventHandler(this.frmEngine_TextChanged);
             // 
             // frmDateReg
             // 
@@ -157,6 +163,7 @@
             this.frmDateReg.Name = "frmDateReg";
             this.frmDateReg.Size = new System.Drawing.Size(106, 26);
             this.frmDateReg.TabIndex = 12;
+            this.frmDateReg.Click += new System.EventHandler(this.frmDateReg_textChanged);
             // 
             // frmRentalPerDay
             // 
@@ -164,6 +171,7 @@
             this.frmRentalPerDay.Name = "frmRentalPerDay";
             this.frmRentalPerDay.Size = new System.Drawing.Size(120, 26);
             this.frmRentalPerDay.TabIndex = 13;
+            this.frmRentalPerDay.Click += new System.EventHandler(this.frmRentalPerDay_TextChanged);
             // 
             // frmAvailable
             // 
@@ -173,8 +181,9 @@
             this.frmAvailable.Size = new System.Drawing.Size(22, 21);
             this.frmAvailable.TabIndex = 14;
             this.frmAvailable.UseVisualStyleBackColor = true;
+            this.frmAvailable.Click += new System.EventHandler(this.frmAvailable_CheckedChanged);
             // 
-            // Add
+            // frmAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -194,8 +203,9 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnClear);
-            this.Name = "Add";
+            this.Name = "frmAdd";
             this.Text = "Task A Add";
+            this.Click += new System.EventHandler(this.frmAdd_load);
             ((System.ComponentModel.ISupportInitialize)(this.frmRentalPerDay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

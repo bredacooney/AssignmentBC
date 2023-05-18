@@ -15,7 +15,7 @@ namespace CarsDataBase
 {
     public partial class frmAdd : Form
     {
-        SQLiteConnection connects = new SQLiteConnection(@"data source = C:\data\hire.db");
+        SQLiteConnection connect = new SQLiteConnection(@"data source = C:\data\hire.db");
 
         public frmAdd()
         {
@@ -23,7 +23,39 @@ namespace CarsDataBase
         }
         private void frmAdd_load(object sender, EventArgs e)
         {
+            if (frmVehicleReg.Text != "" && frmMake.Text != "" && frmDateRegistered.Text != "" && frmEngineSize.Text != "" && frmRentalPerDay.Value != 0)
+            {
+                try
+                {
+                    string isRegInDB = $@"SELECT VehicleRegNo FROM tblCar WHERE VehicleRegNo = '" + frmVehicleReg.Text + "'";
+                    databaseConnection.Open();
+
+                    var command = databaseConnection.CreateCommand();
+                    command.CommandText = isRegInDB;
+
+                    using (var reader = command)
+                    {
+
+                    }
+
+                    string addARecord = $@"INSERT INTO tblCar (VehicleRegNo, Make, EngineSize, DateRegistered, RentalPerDay, Available)";
+
+                    SQLiteCommand insertSQL = new SQLiteCommand(isRegInDB, databaseConnection);
+                    DataTable dt = new DataTable();
+                    SQLiteDataAdapter adapter3 = new SQLiteDataAdapter(insertSQL);
+                    adapter3.Fill(dt);
+                    frmDataGrid.DataSource = dt;
+                    databaseConnection.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Cannot ");
+                    return;
+                }
+            }
         }
+        
+        
         private int availability;
         private string returnedReg;
 
@@ -34,8 +66,8 @@ namespace CarsDataBase
                 try
                 {
                     //STRINGS USED FOR DB
-                    String is RegInDb = $@"SELECT VehicleRegNo FROM tblCar WHERE VehicleRegNo = '" + frmVehicleReg.Text + "'";
-                    connects.Open();
+                    string isRegInDb = $@"SELECT VehicleRegNo FROM tblCar WHERE VehicleRegNo = '" + frmVehicleReg.Text + "'";
+                    connect.Open();
 
                     var command = connect.CreateCommand();
                     command.CommandText = isRegInDb;
@@ -66,13 +98,13 @@ namespace CarsDataBase
                                 availability = 0;
                             }
                             string addRecord = $@"INSER INTO tblCar (VehicleRegNo, Make, EngineSize, DateRegistered, RentalPerDay, Available) Values
-                           ('" + frmVehicleReg.Text + "', '" + frmMake.Test + "', '" + frmEngine.Text + "', '" + frmDateReg.Text + "', '" + frmRentalPerDay.Value + "', '" + availability + "')";
+                           ('" + frmVehicleReg.Text + "', '" + frmMake.Text + "', '" + frmEngine.Text + "', '" + frmDateReg.Text + "', '" + frmRentalPerDay.Value + "', '" + availability + "')";
 
-                            SQLiteCommand insertSQL = newSQLiteCommand(addARecord, connect);
-                            insertSQL.CommandText = AddARecord;
+                            SQLiteCommand insertSQL = new SQLiteCommand(isRegInDb, connect);
+                            //insertSQL.CommandText = AddARecord;
                             insertSQL.ExecuteNonQuery();
                             MessageBox.Show("You have succesfully added a new record to the datbase");
-                            connects.Close();
+                            connect.Close();
                         }
 
 
@@ -120,7 +152,7 @@ namespace CarsDataBase
         
         }
 
-        private void button1_click(object sender, EventArgs e)
+        private void btnClear_click(object sender, EventArgs e)
         {
             frmVehicleReg.Text = "";
             frmEngine.Text = "";
@@ -130,12 +162,12 @@ namespace CarsDataBase
             frmAvailable.Checked = false;
         }
 
-        private void btnclose_click(object sender, EventArgs e)
+        private void btnClose_click(object sender, EventArgs e)
         {
 
-            frmCars goToFrmCars = new frmCars();
-            this.Hide()
-            goToFrnmCars.ShowDialog();
+            frmCars goTofrmCars = new frmCars();
+            this.Hide();
+            goTofrmCars.ShowDialog();
             this.Close();
         }
 

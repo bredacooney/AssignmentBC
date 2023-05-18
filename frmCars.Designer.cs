@@ -165,6 +165,7 @@
             this.btnLast.TabIndex = 9;
             this.btnLast.Text = "Last";
             this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // recordCount
             // 
@@ -234,13 +235,15 @@
             this.frmVehicleReg.Name = "frmVehicleReg";
             this.frmVehicleReg.Size = new System.Drawing.Size(132, 26);
             this.frmVehicleReg.TabIndex = 17;
+            this.frmVehicleReg.Click += new System.EventHandler(this.frmVehicleReg_TextChanged);
             // 
             // frmMake
             // 
-            this.frmMake.Location = new System.Drawing.Point(264, 70);
+            this.frmMake.Location = new System.Drawing.Point(265, 70);
             this.frmMake.Name = "frmMake";
             this.frmMake.Size = new System.Drawing.Size(222, 26);
             this.frmMake.TabIndex = 18;
+            this.frmMake.Click += new System.EventHandler(this.frmMake_TextChanged);
             // 
             // frmEngine
             // 
@@ -248,6 +251,7 @@
             this.frmEngine.Name = "frmEngine";
             this.frmEngine.Size = new System.Drawing.Size(152, 26);
             this.frmEngine.TabIndex = 19;
+            this.frmEngine.Click += new System.EventHandler(this.frmEngine_TextChanged);
             // 
             // frmDateReg
             // 
@@ -255,6 +259,7 @@
             this.frmDateReg.Name = "frmDateReg";
             this.frmDateReg.Size = new System.Drawing.Size(132, 26);
             this.frmDateReg.TabIndex = 20;
+            this.frmDateReg.Click += new System.EventHandler(this.frmDateReg_TextChanged);
             // 
             // frmRentalPerDay
             // 
@@ -262,6 +267,7 @@
             this.frmRentalPerDay.Name = "frmRentalPerDay";
             this.frmRentalPerDay.Size = new System.Drawing.Size(152, 26);
             this.frmRentalPerDay.TabIndex = 21;
+            this.frmRentalPerDay.Click += new System.EventHandler(this.frmRentalPerDay_TextChanged);
             // 
             // frmAvailable
             // 

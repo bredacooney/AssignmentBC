@@ -30,12 +30,12 @@
         {
             this.frmDataGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ValueTextbox = new System.Windows.Forms.TextBox();
+            this.cboOperator = new System.Windows.Forms.ComboBox();
+            this.cboField = new System.Windows.Forms.ComboBox();
             this.frmValueLabel = new System.Windows.Forms.Label();
             this.frmOperatorLabel = new System.Windows.Forms.Label();
             this.frmFieldLabel = new System.Windows.Forms.Label();
-            this.cboField = new System.Windows.Forms.ComboBox();
-            this.cboOperator = new System.Windows.Forms.ComboBox();
-            this.ValueTextbox = new System.Windows.Forms.TextBox();
             this.btnRun = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.frmDataGrid)).BeginInit();
@@ -51,6 +51,7 @@
             this.frmDataGrid.RowTemplate.Height = 28;
             this.frmDataGrid.Size = new System.Drawing.Size(729, 157);
             this.frmDataGrid.TabIndex = 0;
+            this.frmDataGrid.Click += new System.EventHandler(this.frmDataGrid_CellContentClick);
             // 
             // panel1
             // 
@@ -64,6 +65,31 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(595, 149);
             this.panel1.TabIndex = 1;
+            // 
+            // ValueTextbox
+            // 
+            this.ValueTextbox.Location = new System.Drawing.Point(396, 83);
+            this.ValueTextbox.Name = "ValueTextbox";
+            this.ValueTextbox.Size = new System.Drawing.Size(100, 26);
+            this.ValueTextbox.TabIndex = 5;
+            // 
+            // cboOperator
+            // 
+            this.cboOperator.FormattingEnabled = true;
+            this.cboOperator.Location = new System.Drawing.Point(220, 81);
+            this.cboOperator.Name = "cboOperator";
+            this.cboOperator.Size = new System.Drawing.Size(121, 28);
+            this.cboOperator.TabIndex = 4;
+            this.cboOperator.Click += new System.EventHandler(this.cboOperator_SelectedIndexChanged);
+            // 
+            // cboField
+            // 
+            this.cboField.FormattingEnabled = true;
+            this.cboField.Location = new System.Drawing.Point(38, 82);
+            this.cboField.Name = "cboField";
+            this.cboField.Size = new System.Drawing.Size(121, 28);
+            this.cboField.TabIndex = 3;
+            this.cboField.Click += new System.EventHandler(this.cboField_SelectedIndexChanged);
             // 
             // frmValueLabel
             // 
@@ -92,29 +118,6 @@
             this.frmFieldLabel.TabIndex = 0;
             this.frmFieldLabel.Text = "Field";
             // 
-            // cboField
-            // 
-            this.cboField.FormattingEnabled = true;
-            this.cboField.Location = new System.Drawing.Point(38, 82);
-            this.cboField.Name = "cboField";
-            this.cboField.Size = new System.Drawing.Size(121, 28);
-            this.cboField.TabIndex = 3;
-            // 
-            // cboOperator
-            // 
-            this.cboOperator.FormattingEnabled = true;
-            this.cboOperator.Location = new System.Drawing.Point(220, 81);
-            this.cboOperator.Name = "cboOperator";
-            this.cboOperator.Size = new System.Drawing.Size(121, 28);
-            this.cboOperator.TabIndex = 4;
-            // 
-            // ValueTextbox
-            // 
-            this.ValueTextbox.Location = new System.Drawing.Point(396, 83);
-            this.ValueTextbox.Name = "ValueTextbox";
-            this.ValueTextbox.Size = new System.Drawing.Size(100, 26);
-            this.ValueTextbox.TabIndex = 5;
-            // 
             // btnRun
             // 
             this.btnRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,6 +127,7 @@
             this.btnRun.TabIndex = 2;
             this.btnRun.Text = "Run";
             this.btnRun.UseVisualStyleBackColor = true;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // btnClose
             // 
@@ -134,6 +138,7 @@
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmSearch
             // 
@@ -146,6 +151,7 @@
             this.Controls.Add(this.frmDataGrid);
             this.Name = "frmSearch";
             this.Text = "Task A Search";
+            this.Click += new System.EventHandler(this.frmSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.frmDataGrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

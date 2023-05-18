@@ -58,7 +58,7 @@ namespace CarsDataBase
             recordCounter("next"); //go to next position
             getData(); //get data of current position
         }
-        private void frmLast(object sender, EventArgs e)
+        private void btnLast_Click(object sender, EventArgs e)
         {
             recordCounter("last"); //go to last position
             getData(); //get data of current position
@@ -406,10 +406,15 @@ namespace CarsDataBase
             frmAvailable.BackColor = Color.LightGoldenrodYellow;
         }
 
-       // private void btnNext_Click(object sender, EventArgs e)
         
+        {
 
-        
+        }
+
+        // private void btnNext_Click(object sender, EventArgs e)
+
+
+
 
         //private void recordCount_TextChanged_1(object sender, EventArgs e)
 
